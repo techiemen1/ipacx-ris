@@ -7,18 +7,25 @@ build/
 __pycache__/
 *.pyc
 
-# Env
+# Environment
 .env
 .env.*
 !.env.example
 
 # Logs
 *.log
+logs/
 
 # OS
 .DS_Store
 Thumbs.db
 
-# Docker volumes
+# Docker / Data
 **/data/
 **/storage/
+**/dicom/
+*.dcm
+
+# Database dumps
+*.sql
+*.dump

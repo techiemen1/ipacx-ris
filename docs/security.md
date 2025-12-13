@@ -1,21 +1,33 @@
-# Security Model – iPacx RIS
+# Security Model – iPacx RIS (Phase 0)
 
-## Authentication
-- JWT-based authentication
-- Role-Based Access Control (RBAC)
+## Scope
+This document defines **infrastructure-level security controls**.
+Application security will be defined in later phases.
 
-## Roles
-- Admin
-- Radiologist
-- Technologist
-- Reception / Billing
+## Core Principles
+- No PHI stored outside PACS or database
+- No secrets committed to Git
+- Strong isolation between services
+- Minimal exposed ports
+
+## Container Security
+- All services run in Docker
+- No privileged containers
+- Volumes explicitly defined
+- Secrets via environment variables only
+
+## Network Segmentation
+- Core network: Portainer, future API gateway
+- DB network: PostgreSQL only
+- PACS network (future): DICOM & DICOMweb only
 
 ## Data Protection
-- TLS for all services
-- Encrypted secrets via environment variables
-- No credentials stored in git
+- Database volumes isolated
+- PACS storage isolated
+- Backups handled via scripts
+- No DICOM files in git
 
-## Audit
-- All patient access logged
-- Report edits tracked
-- PACS access audited
+## Audit Readiness
+- Architecture decisions recorded (ADR)
+- Deployment steps documented
+- Access patterns defined before implementation
