@@ -9,7 +9,7 @@ services:
     environment:
       ORTHANC__REMOTE_ACCESS_ALLOWED: "true"
       ORTHANC__AUTHENTICATION_ENABLED: "true"
-      ORTHANC__REGISTERED_USERS__ipacx-admin: "ipacx123"
+      ORTHANC__REGISTERED_USERS__ipacx_admin: "ipacx123"
     volumes:
       - orthanc_data:/var/lib/orthanc/db
       - ./config:/etc/orthanc:ro
