@@ -1,0 +1,20 @@
+version: "3.9"
+
+networks:
+  ipacx_pacs:
+    external: true
+
+services:
+  dcm4chee:
+    image: dcm4che/dcm4chee-arc-psql:5.33.0
+    container_name: ipacx-dcm4chee
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+      - "11112:11112"
+    environment:
+      POSTGRES_DB: dcm4chee
+      POSTGRES_USER: dcm4chee
+      POSTGRES_PASSWORD: dcm4chee
+    networks:
+      - ipacx_pacs

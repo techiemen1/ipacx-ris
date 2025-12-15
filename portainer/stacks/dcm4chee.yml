@@ -1,0 +1,10 @@
+version: "3.9"
+
+services:
+  dcm4chee:
+    image: dcm4che/dcm4chee-arc-psql:5.33.0
+    container_name: ipacx-dcm4chee
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+      - "11112:11112"
