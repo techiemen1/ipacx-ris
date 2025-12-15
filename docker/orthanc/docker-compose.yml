@@ -4,11 +4,11 @@ services:
     container_name: ipacx-orthanc
     restart: unless-stopped
     ports:
-      - "8042:8042"     # HTTP + DICOMweb
-      - "4242:4242"     # DICOM
+      - "8042:8042"
+      - "4242:4242"
     volumes:
       - orthanc_data:/var/lib/orthanc/db
-      - ./orthanc.json:/etc/orthanc/orthanc.json:ro
+      - ./config:/etc/orthanc:ro
     networks:
       - ipacx_pacs
 
