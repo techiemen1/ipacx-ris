@@ -1,23 +1,20 @@
-version: "3.9"
-
-networks:
-  ipacx_pacs:
-    external: true
-
 services:
   orthanc:
     image: orthanc/orthanc:latest
     container_name: ipacx-orthanc
     restart: unless-stopped
     ports:
-      - "8042:8042"     # HTTP + DICOMweb
-      - "4242:4242"     # DICOM
+      - "8042:8042"
+      - "4242:4242"
     volumes:
       - orthanc_data:/var/lib/orthanc/db
       - ./orthanc.json:/etc/orthanc/orthanc.json:ro
+    networks:
+      - ipacx_pacs
 
 volumes:
   orthanc_data:
 
-    networks:
-      - ipacx_pacs
+networks:
+  ipacx_pacs:
+    external: true
