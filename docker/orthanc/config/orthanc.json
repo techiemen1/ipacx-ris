@@ -1,6 +1,12 @@
 {
   "Name": "iPacx PACS",
 
+  "RemoteAccessAllowed": true,
+  "AuthenticationEnabled": true,
+
+  "RegisteredUsers": {
+    "ipacx": "ipacx123"
+  },
 
   "DicomWeb": {
     "Enable": true,
