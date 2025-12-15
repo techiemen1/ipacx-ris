@@ -1,17 +1,10 @@
 {
-  "Name": "iPacx-Orthanc",
-  "HttpPort": 8042,
-  "DicomPort": 4242,
-
-  "Plugins": [
-    "/usr/share/orthanc/plugins"
-  ],
+  "Name": "iPacx PACS",
+  "RemoteAccessAllowed": true,
+  "AuthenticationEnabled": false,
 
   "DicomWeb": {
     "Enable": true,
     "Root": "/dicom-web/"
-  },
-
-  "AuthenticationEnabled": false,
-  "RemoteAccessAllowed": true
+  }
 }
