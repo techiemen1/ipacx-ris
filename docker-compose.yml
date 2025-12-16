@@ -29,6 +29,15 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+services:
+  backend:
+    build: ./backend
+    container_name: ipacx-backend
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+
 
   portainer:
     image: portainer/portainer-ce:latest
